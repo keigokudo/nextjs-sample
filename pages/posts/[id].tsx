@@ -3,9 +3,17 @@ import Layout from "../../components/Layout";
 import Date from "../../components/Date";
 import { getAllPostsIds, getPostData } from "../../lib/post";
 import utilStyles from "../../styles/utils.module.css";
+import { ReactPropTypes } from "react";
 
-export default function Post(props) {
-  const { postData } = props;
+export default function Post({
+  postData,
+}: {
+  postData: {
+    title: string;
+    date: string;
+    contentHtml: string;
+  };
+}) {
   return (
     <Layout>
       <Head>
